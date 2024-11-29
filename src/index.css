@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #fcfcfc;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  color: black;
+}
+
+nav {
+  color: black;
+}
+
+.nav--shopping-cart {
+  position: relative;
+}
+
+.nav--shopping-cart-count {
+  position: absolute;
+  border-radius: 50%;
+  top: 8px;
+  width: 20px;
+  height: 20px;
+  left: 15px;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  z-index: 1;
+  line-height: 16px;
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.2s ease-in-out;
+  background-color: white;
+}
+
+.isActive {
+  background-color: #4caf50; /* Green background */
+  color: white; /* White text */
+}
+
+
+.img-container {
+  overflow: hidden; /* Ensures the zoomed-in part doesn't spill outside */
+  background-color: black; /* Sets container background for better contrast */
+}
+
+
+.product-image {
+  transition: transform 0.3s ease; /* Smooth zoom effect */
+  cursor: pointer;
+}
+
+.img-container:hover .product-image {
+  transform: scale(1.1); /* Zooms in on the image */
+}
+
+.title { 
+  font-size: 2rem;
+  color: black;
+}
