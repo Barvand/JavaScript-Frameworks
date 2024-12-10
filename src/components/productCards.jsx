@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { AddToCartBtn } from "./cartButton";
+import { useState, useEffect } from "react";
 import ViewProductBtn from "./viewproductbtn";
+import { useCartStore } from "../store/cart";
 
 export function ProductCards() {
   const [products, setProducts] = useState([]); // State to hold products
@@ -9,6 +8,8 @@ export function ProductCards() {
   const [loading, setLoading] = useState(true); // State to handle loading
   const [error, setError] = useState(null); // Set error message
   const [isActive, setIsActive] = useState(""); // State to track the active filter
+
+  const { addToCart } = useCartStore();
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -57,7 +58,7 @@ export function ProductCards() {
 
   return (
     <>
-      <div className="bg-slate-300 flex">
+      <div className="flex">
         {/* Button to reset the products to the original state */}
         <button
           onClick={resetProducts}
@@ -87,29 +88,48 @@ export function ProductCards() {
         </button>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 xl:grid-cols-4 gap-4">
         {products.map((product) => (
-          <div
-            key={product.id}
-            className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 p-2"
-          >
+          <div key={product.id} className="p-2">
             <div className="img-container">
               <img
-                className="product-image object-cover h-48 w-96"
+                className="product-image object-cover h-48 w-full"
                 src={product.image.url}
                 alt={product.image.alt}
               ></img>
             </div>
-            <h3>{product.title}</h3>
-            <p>{product.description}</p>
-            <div className="product-prices flex gap-2">
-              <p className="text-green-700 font-bold">
-                {product.discountedPrice}
-              </p>
-              <p>{product.price}</p>
+            <div className="max-height-cards">
+              <h3 className="py-4 text-xl font-bold dark:text-white gradient-border-bottom">
+                {product.title}
+              </h3>
+              <div className="py-4">
+                <p className="py-2">{product.description}</p>
+                <div className="product-prices flex gap-2">
+                  <p className="text-green-500 font-bold">
+                    {product.discountedPrice === product.price ? (
+                      // No discount case: Display only the regular price
+                      <span className="font-bold">${product.price}</span>
+                    ) : (
+                      <>
+                        <span className="text-price font-bold">
+                          ${product.discountedPrice}
+                        </span>
+                        <span className="line-through text-red-400 ml-2">
+                          ${product.price}
+                        </span>
+                      </>
+                    )}
+                  </p>
+                </div>
+              </div>
             </div>
-            <div className="add-to-cart flex gap-2 mt-2">
-              <AddToCartBtn />
+            <div className="flex justify-between py-2">
+              <button
+                className="font-bold py-2 px-4 rounded gradient-border-bottom"
+                onClick={() => addToCart(product)}
+              >
+                Add to cart
+              </button>
               <ViewProductBtn id={product.id} />
             </div>
           </div>

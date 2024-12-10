@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { AddToCartBtn } from "./cartButton";
+import { useCartStore } from "../store/cart";
 
 export function Product() {
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(null);
   const [isError, setIsError] = useState(null);
   let { id } = useParams();
+
+  const { addToCart } = useCartStore(); 
 
   useEffect(() => {
     async function getData(url) {
@@ -35,7 +37,6 @@ export function Product() {
   if (isError) {
     return <div>Error</div>;
   }
-  console.log(data);
 
   return (
     <div className="md:container-md grid grid-cols-12 grid-rows-2 gap-4 mt-5">
@@ -83,8 +84,11 @@ export function Product() {
             )}
           </p>
         </div>
-        <div className="add-to-cart flex gap-2 mt-2">
-          <AddToCartBtn />
+        <div className="flex gap-2 mt-2">
+          <button
+            className="font-bold py-2 px-4 rounded gradient-border-bottom"
+            onClick={() => addToCart(data)}
+          > Add to cart </button> 
         </div>
       </div>
       <div className="col-span-12">
