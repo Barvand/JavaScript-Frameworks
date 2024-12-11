@@ -1,8 +1,8 @@
 import React from "react";
 import { useCartStore } from "../store/cart"; // Ensure correct import of the Zustand store
-import Cart from "../components/cart";
 
-export function ShoppingCart() {
+
+export function ShoppingCart({ CartComponent }) {
   const { carts, removeFromCart, clearCart, getTotalCost } = useCartStore();
 
   // Get the total cost, rounded to two decimal places
@@ -21,7 +21,7 @@ export function ShoppingCart() {
             {/* Render all cart items */}
             <div>
               {carts.map((cart) => (
-                <Cart
+                <CartComponent
                   key={cart.id}
                   cart={cart}
                   removeFromCart={removeFromCart}

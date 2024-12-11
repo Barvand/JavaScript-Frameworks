@@ -6,7 +6,9 @@ export const useCartStore = create(
     (set, get) => ({
       carts: [],
 
-      addToCart: (product) =>
+      addToCart: (product) => {
+        // Get the toggleModal function from the modal store
+
         set((state) => {
           const existingItemIndex = state.carts.findIndex(
             (item) => item.id === product.id
@@ -23,7 +25,8 @@ export const useCartStore = create(
           // If the item doesn't exist in the cart, add it with a quantity of 1
           console.log([...state.carts, { ...product, quantity: 1 }]); // Check updated state
           return { carts: [...state.carts, { ...product, quantity: 1 }] };
-        }),
+        });
+      },
 
       removeFromCart: (id) =>
         set((state) => ({

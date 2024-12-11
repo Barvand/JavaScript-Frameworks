@@ -8,8 +8,8 @@ export function ProductCards() {
   const [loading, setLoading] = useState(true); // State to handle loading
   const [error, setError] = useState(null); // Set error message
   const [isActive, setIsActive] = useState(""); // State to track the active filter
-
   const { addToCart } = useCartStore();
+
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -55,6 +55,7 @@ export function ProductCards() {
   if (error) {
     return <div>Oops, something went wrong: {error}</div>;
   }
+
 
   return (
     <>

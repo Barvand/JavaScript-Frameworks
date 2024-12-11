@@ -6,6 +6,8 @@ import { Home } from "./pages/home";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { ProductPage } from "./pages/productPage.jsx";
 import { ShoppingCart } from "./pages/ShoppingCart.jsx"
+import Cart from "./components/cart.jsx";
+
 
 function App() {
   return (
@@ -19,7 +21,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/products/:id" element={<ProductPage />} />
             <Route path="contact" element={<ContactPage />} />
-            <Route path="cart" element={<ShoppingCart />} />
+            <Route path="cart" element={<ShoppingCart  CartComponent={Cart} />} />
           </Routes>
         </div>
       </Router>
