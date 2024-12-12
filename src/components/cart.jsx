@@ -23,17 +23,13 @@ return (
             className="my-5 gradient-border-bottom grid grid-cols-1 sm:grid-cols-12 p-3 items-center justify-items-center sm:justify-items-start"
           >
             {/* Image and Title Section */}
-            <div className="col-span-6 sm:col-span-6 flex items-center gap-2 justify-center sm:justify-start">
-              <img
-                src={cart.image.url}
-                alt={cart.image.alt}
-                className="h-20"
-              />
-              <p className="font-bold">{cart.title}</p>
+            <div className="col-span-2 flex items-center gap-2 justify-center sm:justify-start">
+              <img src={cart.image.url} alt={cart.image.alt} className="h-20" />
             </div>
 
             {/* Price Section */}
-            <div className="col-span-12 sm:col-span-3 flex items-center justify-center sm:justify-center mt-3 sm:mt-0">
+            <div className="col-span-12 sm:col-span-6 flex flex-col justify-center sm:justify-center mt-3 sm:mt-0">
+              <p className="font-bold">{cart.title}</p>
               <p className="font-bold">
                 ${(cart.quantity * cart.price).toFixed(2)}
               </p>
@@ -55,14 +51,11 @@ return (
                 >
                   +
                 </button>
-                <button
-                  className="ml-3"
-                  onClick={() => removeFromCart(cart.id)}
-                >
-                  <DeleteIcon />
-                </button>
               </div>
             </div>
+            <button className="ml-3" onClick={() => removeFromCart(cart.id)}>
+              <DeleteIcon />
+            </button>
           </div>
         ))}
         <div className="mt-auto flex flex-col items-center justify-center">

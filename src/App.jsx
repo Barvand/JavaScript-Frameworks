@@ -18,7 +18,7 @@ function App() {
         <Navigation />
         <SideCartMenu/>
         {/* <SideCartMenu/> */}
-        <div className="sm:container p-2 mt-5 ">
+        <div className="container p-2 mt-5 ">
           <Routes>
             {/* Define the Route for ContactPage */}
             <Route path="/products" element={<ProductsPage />} />
