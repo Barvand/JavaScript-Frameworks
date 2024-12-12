@@ -73,7 +73,7 @@ export function Navigation() {
           </>
         </ul>
       </div>
-      <SearchBar/>
+      <SearchBar />
     </nav>
   );
 }
