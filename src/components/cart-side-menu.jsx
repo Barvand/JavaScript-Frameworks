@@ -33,7 +33,7 @@ export default function SideCartMenu() {
 
      {/* Side Cart */}
      <div
-       className={`fixed w-full sm:w-3/4 right-0 top-0 p-3 border-2 border-neutral bg-primary h-full z-40 text-white transform transition-transform duration-500 ease-in-out ${
+       className={`fixed w-full sm:w-3/4 md:w-2/4 lg:w-1/3 xl:w-1/4 right-0 top-0 p-3 border-2 border-neutral bg-primary h-full z-40 text-white transform transition-transform duration-500 ease-in-out ${
          showSideCart ? "translate-x-0" : "translate-x-full"
        }`}
      >
