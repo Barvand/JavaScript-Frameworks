@@ -28,6 +28,8 @@ export const useCartStore = create(
         });
       },
 
+      toggleSideCart: (status) => set({ showSideCart: status }),
+
       removeFromCart: (id) =>
         set((state) => ({
           carts: state.carts.filter((item) => item.id !== id),

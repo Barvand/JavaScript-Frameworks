@@ -6,7 +6,9 @@ import { Home } from "./pages/home";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { ProductPage } from "./pages/productPage.jsx";
 import { ShoppingCart } from "./pages/ShoppingCart.jsx"
-import Cart from "./components/cart.jsx";
+import SideCartMenu from "./components/cart-side-menu.jsx";
+
+// import SideCartMenu from "./components/cart-side-menu.jsx";
 
 
 function App() {
@@ -14,14 +16,16 @@ function App() {
     <>
       <Router>
         <Navigation />
-        <div className="sm:container mt-5 ">
+        <SideCartMenu/>
+        {/* <SideCartMenu/> */}
+        <div className="sm:container p-2 mt-5 ">
           <Routes>
             {/* Define the Route for ContactPage */}
             <Route path="/products" element={<ProductsPage />} />
             <Route path="/" element={<Home />} />
             <Route path="/products/:id" element={<ProductPage />} />
             <Route path="contact" element={<ContactPage />} />
-            <Route path="cart" element={<ShoppingCart  CartComponent={Cart} />} />
+            <Route path="cart" element={<ShoppingCart  />} />
           </Routes>
         </div>
       </Router>

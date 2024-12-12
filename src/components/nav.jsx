@@ -24,7 +24,7 @@ export function Navigation() {
   }, []);
 
   return (
-    <nav className="sm:container p-4 font-koulen text-xl border-bottom-styling">
+    <nav className="sm:container p-2 font-koulen text-xl border-bottom-styling">
       <div className="md:container">
         <ul className="flex py-2 justify-end gap-5 items-center">
           <li className="flex-1">
@@ -45,12 +45,12 @@ export function Navigation() {
             </div>
           </Link>
           <>
-            <div className="block md:hidden z-50" ref={menuRef}>
+            <div className="block md:hidden z-40" ref={menuRef}>
               <Hamburger toggled={isOpen} toggle={setOpen} />
             </div>
             <div
-              className={`hamburger-width w-96 gradient-border z-40 transform transition-transform duration-500 ease-in-out ${
-                isOpen ? "translate-x-0" : "-translate-x-full"
+              className={`hamburger-width gradient-border z-30 transform transition-transform duration-500 ease-in-out ${
+                isOpen ? "translate-x-0" : "translate-x-full"
               }`}
             >
               <nav className="sm:container p-4 font-koulen text-xl items-center">
