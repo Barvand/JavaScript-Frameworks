@@ -113,7 +113,7 @@ export function ContactPage() {
   };
 
   return (
-    <div className="grid grid-cols-12 gap-4">
+    <div className="grid grid-cols-12 gap-4 py-2">
       <div className="bg-purple-500 col-span-12 lg:col-span-6 rounded h-64 p-6 grid">
         <div className="flex items-center">
           {/* Icon Section */}
