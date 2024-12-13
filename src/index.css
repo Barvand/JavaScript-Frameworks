@@ -172,6 +172,20 @@ nav {
 }
 
 
+.error-message {
+  display: none;
+}
+
+/* Error Messages */
+
+input:invalid[focused="true"] { 
+  border: 1px solid red;
+}
+
+input:invalid[focused="true"] ~ .error-message{ 
+  display: block;
+}
+
 
 
 
@@ -219,3 +233,8 @@ nav {
   animation: dropIn 4s ease forwards infinite;
   animation-delay: calc(var(--order) * 200ms);
 }
+
+
+
+
+
