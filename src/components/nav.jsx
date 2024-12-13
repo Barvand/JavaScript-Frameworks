@@ -25,7 +25,7 @@ export function Navigation() {
   }, []);
 
   return (
-    <nav className="sm:container p-2 font-koulen text-xl border-bottom-styling">
+    <nav className="sm:container p-2 font-koulen text-xl gradient-border-bottom-yellow pb-5">
       <div className="md:container">
         <ul className="flex py-2 justify-end gap-5 items-center">
           <li className="flex-1">

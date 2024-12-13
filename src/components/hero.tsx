@@ -6,7 +6,7 @@ interface Hero {}
 export default function Hero() {
   return (
     <>
-      <section className="border-bottom-styling pb-8 grid mx-auto lg:gap-8 xl:gap-0 lg:grid-cols-12 mb-10">
+      <section className="gradient-border-bottom-yellow pb-8 grid mx-auto lg:gap-8 xl:gap-0 lg:grid-cols-12 mb-10">
         <div className="mr-auto place-self-center lg:col-span-6 text-center">
           <h1 className="text-white max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl text-koulen">
             Great deals!

@@ -98,15 +98,6 @@ nav {
   font-size: 2rem;
 }
 
-.typewriter {
-  display: inline-block;
-  width: 0;
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: 3px solid #ddd; /* Cursor style */
-  animation: typing 4s steps(50) 1s forwards, cursor 0.75s step-end infinite;
-}
-
 .gradient-border {
   border: 4px solid;
   border-image: linear-gradient(to right, #00ffff 0%, #7d3c98 100%) 1;
@@ -134,18 +125,24 @@ nav {
   box-shadow: 0 0 10px #ad276a, 0 0 20px #ad276a;
 }
 
+.gradient-border-top { 
+   border-image: linear-gradient(to right, #FFFF00 0%, #7d3c98 100%) 1;
+  border-top: 4px solid;
+  margin-bottom: 5px;
+}
+
+.gradient-border-bottom-yellow { 
+   border-image: linear-gradient(to right, #FFFF00 0%, #7d3c98 100%) 1;
+  border-bottom: 4px solid;
+  margin-bottom: 5px;
+}
+
+.gradient-bg-color { 
+  background-image: linear-gradient(to right, #FFFF00 0%, #7d3c98 100%);
+}
+
 .max-height-cards {
   height: 200px;
-}
-
-#skeleton {
-  animation: fadeInUp 3s ease;
-}
-
-#animation g {
-  opacity: 0;
-  animation: dropIn 4s ease forwards infinite;
-  animation-delay: calc(var(--order) * 200ms);
 }
 
 #purchase-completed {
@@ -153,6 +150,31 @@ nav {
   animation: complete 1s ease forwards;
   animation-delay: 3s; /* Starts after the #animation g animation is done */
 }
+
+/* Cart modal */
+.cart-modal { 
+  position: absolute;
+  right: 0;
+}
+
+.btn-hide {
+  padding: 10px 20px;
+  background-color: #ff6347; /* Tomato color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn-hide:hover {
+  background-color: #ff4500; /* Darker red on hover */
+}
+
+
+
+
+
 
 @keyframes fadeInUp {
   from {
@@ -188,22 +210,12 @@ nav {
   }
 }
 
-/* Cart modal */
-.cart-modal { 
-  position: absolute;
-  right: 0;
+#skeleton {
+  animation: fadeInUp 3s ease;
 }
 
-.btn-hide {
-  padding: 10px 20px;
-  background-color: #ff6347; /* Tomato color */
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-.btn-hide:hover {
-  background-color: #ff4500; /* Darker red on hover */
+#animation g {
+  opacity: 0;
+  animation: dropIn 4s ease forwards infinite;
+  animation-delay: calc(var(--order) * 200ms);
 }

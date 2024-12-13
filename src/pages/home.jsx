@@ -26,7 +26,7 @@ export function Home() {
       )}}
       {/* Main Content */}
       <Hero />
-      <div className="element">
+      <div className="container mt-10">
         <ProductCards />
       </div>
       {/* Your main content component */}
