@@ -125,20 +125,30 @@ nav {
   box-shadow: 0 0 10px #ad276a, 0 0 20px #ad276a;
 }
 
-.gradient-border-top { 
-   border-image: linear-gradient(to right, #FFFF00 0%, #7d3c98 100%) 1;
+.gradient-border-top {
+  border-image: linear-gradient(to right, #ffff00 0%, #7d3c98 100%) 1;
   border-top: 4px solid;
   margin-bottom: 5px;
 }
 
-.gradient-border-bottom-yellow { 
-   border-image: linear-gradient(to right, #FFFF00 0%, #7d3c98 100%) 1;
+.gradient-border-bottom-yellow {
+  border-image: linear-gradient(to right, #ffff00 0%, #7d3c98 100%) 1;
   border-bottom: 4px solid;
   margin-bottom: 5px;
 }
 
-.gradient-bg-color { 
-  background-image: linear-gradient(to right, #FFFF00 0%, #7d3c98 100%);
+.gradient-bg-color {
+  background-image: linear-gradient(to right, #ffff00 0%, #7d3c98 100%);
+}
+
+.gradient-border-side-menu {
+  border-image: linear-gradient(to right, #ffff00 0%, #7d3c98 100%) 1;
+  border-bottom: 4px solid;
+  margin-bottom: 5px;
+}
+
+.gradient-border-side-menu:hover {
+   box-shadow: 0 0 5px #ffffff, 0 0 10px #000000;
 }
 
 .max-height-cards {
@@ -152,7 +162,7 @@ nav {
 }
 
 /* Cart modal */
-.cart-modal { 
+.cart-modal {
   position: absolute;
   right: 0;
 }
@@ -171,24 +181,19 @@ nav {
   background-color: #ff4500; /* Darker red on hover */
 }
 
-
 .error-message {
   display: none;
 }
 
 /* Error Messages */
 
-input:invalid[focused="true"] { 
+input:invalid[focused="true"] {
   border: 1px solid red;
 }
 
-input:invalid[focused="true"] ~ .error-message{ 
+input:invalid[focused="true"] ~ .error-message {
   display: block;
 }
-
-
-
-
 
 @keyframes fadeInUp {
   from {
@@ -233,8 +238,3 @@ input:invalid[focused="true"] ~ .error-message{
   animation: dropIn 4s ease forwards infinite;
   animation-delay: calc(var(--order) * 200ms);
 }
-
-
-
-
-
