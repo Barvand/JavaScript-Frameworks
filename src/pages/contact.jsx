@@ -114,7 +114,7 @@ export function ContactPage() {
 
   return (
     <div className="grid grid-cols-12 gap-4">
-      <div className="bg-purple-500 col-span-6 rounded h-64 p-6 grid">
+      <div className="bg-purple-500 col-span-12 lg:col-span-6 rounded h-64 p-6 grid">
         <div className="flex items-center">
           {/* Icon Section */}
           <div className="flex-shrink-0">
@@ -136,7 +136,7 @@ export function ContactPage() {
           </div>
         </div>
       </div>
-      <div className="bg-yellow-500 col-span-6 rounded h-64 p-6 grid">
+      <div className="bg-yellow-500 col-span-12 lg:col-span-6 rounded h-64 p-6 grid">
         <div className="flex items-center">
           {/* Icon Section */}
           <div className="flex-shrink-0">
@@ -158,15 +158,13 @@ export function ContactPage() {
           </div>
         </div>
       </div>
-      <form
-        className="col-span-12 sm:col-span-8 md:col-span-6"
-        onSubmit={handleSubmit}
-      >
+      <form className="col-span-12 lg:col-span-6" onSubmit={handleSubmit}>
+        <h2 className="text-3xl"> Write to us </h2>
         {inputs.map((input) => (
           <div key={input.id} className="flex flex-wrap -mx-3 mb-6">
             <div className="w-full px-3">
               <label
-                className="block text-gray-700 text-sm font-bold mb-2"
+                className="block text-neutral text-sm font-bold mb-2"
                 htmlFor={input.name}
               >
                 {input.label}
