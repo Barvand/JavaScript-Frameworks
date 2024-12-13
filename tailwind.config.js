@@ -21,6 +21,7 @@ export default {
     },
     fontFamily: {
       koulen: ["Koulen", "sans-serif"],
+      roboto: ["Roboto", "sans-serif"], 
     },
   },
   plugins: [],
