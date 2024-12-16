@@ -113,7 +113,7 @@ export function ContactPageForm() {
 
   return (
     <form
-      className="col-span-12  w-full lg:w-1/3 md:mx-auto"
+      className="col-span-12  w-full lg:w-1/2 md:mx-auto bg-black rounded p-6"
       onSubmit={handleSubmit}
     >
       <h2 className="text-3xl"> Write to us </h2>
