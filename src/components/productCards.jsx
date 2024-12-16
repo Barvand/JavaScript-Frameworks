@@ -10,7 +10,6 @@ export function ProductCards() {
   const [isActive, setIsActive] = useState(""); // State to track the active filter
   const { addToCart } = useCartStore();
 
-
   useEffect(() => {
     const fetchProducts = async () => {
       try {
@@ -56,11 +55,9 @@ export function ProductCards() {
     return <div>Oops, something went wrong: {error}</div>;
   }
 
-
   return (
     <>
-      <div className="flex">
-        {/* Button to reset the products to the original state */}
+      {/* <div className="flex">
         <button
           onClick={resetProducts}
           className={`border-solid border-2 border-gray-600 p-1 ${
@@ -71,13 +68,13 @@ export function ProductCards() {
         </button>
 
         {/* Filter buttons */}
-        <button
+        {/* <button
           onClick={() => sortProducts("low")}
           className={`border-solid border-2 border-gray-600 p-1 ${
             isActive === "low" ? "isActive" : ""
           }`}
-        >
-          Lowest Price
+        > */}
+          {/* Lowest Price
         </button>
         <button
           onClick={() => sortProducts("high")}
@@ -87,11 +84,11 @@ export function ProductCards() {
         >
           Highest Price
         </button>
-      </div>
+      </div> */}
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 xl:grid-cols-4 gap-4">
         {products.map((product) => (
-          <div key={product.id} className="p-2">
+          <div key={product.id} className="p-2 relative">
             <div className="img-container">
               <img
                 className="product-image object-cover h-48 w-full"
@@ -112,11 +109,21 @@ export function ProductCards() {
                       <span className="font-bold">${product.price}</span>
                     ) : (
                       <>
-                        <span className="text-price font-bold">
+                        <span className="text-green-500 font-bold">
                           ${product.discountedPrice}
                         </span>
-                        <span className="line-through text-red-400 ml-2">
+                        <span className="text-red-500 ml-2">
+                          before </span> 
+                          <span className="text-red-500 line-through">
                           ${product.price}
+                        </span>
+                        <span className="ml-2 absolute bg-secondary right-0 top-0 w-full font-bold text-neon p-1 text-center">
+                          {Math.round(
+                            ((product.price - product.discountedPrice) /
+                              product.price) *
+                              100
+                          )}
+                          % Off!
                         </span>
                       </>
                     )}

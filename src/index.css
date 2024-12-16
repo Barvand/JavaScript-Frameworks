@@ -138,7 +138,7 @@ nav {
 }
 
 .gradient-bg-color {
-  background-image: linear-gradient(to right, #ffff00 0%, #7d3c98 100%);
+  background-image: linear-gradient(to right, #00ffff 0%, #7d3c98 100%);
 }
 
 .gradient-border-side-menu {
@@ -180,6 +180,7 @@ nav {
 .btn-hide:hover {
   background-color: #ff4500; /* Darker red on hover */
 }
+
 
 .error-message {
   display: none;
