@@ -23,7 +23,7 @@ export default function Hero() {
         <div className="hidden lg:mt-0 lg:col-span-6 lg:flex">
           <img
             className="w-100 object-cover"
-            src="src/images/jezael-melgoza-layMbSJ3YOE-unsplash.jpg"
+            src="public/images/jezael-melgoza-layMbSJ3YOE-unsplash.jpg"
             alt="people-shopping-tokyo"
           ></img>
         </div>
