@@ -69,16 +69,22 @@ export function Product() {
         </p>
         <p>{data.description}</p>
         <div className="product-prices flex gap-2">
-          <p>
+          <p className="text-green-500 font-bold">
             {data.discountedPrice === data.price ? (
-              <span className="font-bold">{data.price}</span> // Display only price if no discount
+              // No discount case: Display only the regular price
+              <span className="font-bold">${data.price}</span>
             ) : (
               <>
-                <span className="text-red-500 font-bold">
-                  {data.discountedPrice}
+                <span className="text-green-500 font-bold">
+                  ${data.discountedPrice}
                 </span>
-                <span className="line-through text-gray-500 ml-2">
-                  {data.price}
+                <span className="text-red-500 ml-2">before </span>
+                <span className="text-red-500 line-through">${data.price}</span>
+                <span className="ml-2 bg-secondary w-full font-bold text-neon p-1 text-center">
+                  {Math.round(
+                    ((data.price - data.discountedPrice) / data.price) * 100
+                  )}
+                  % Off!
                 </span>
               </>
             )}
@@ -88,7 +94,10 @@ export function Product() {
           <button
             className="font-bold py-2 px-4 rounded gradient-border-bottom"
             onClick={() => addToCart(data)}
-          > Add to cart </button> 
+          >
+            {" "}
+            Add to cart{" "}
+          </button>
         </div>
       </div>
       <div className="col-span-12">
