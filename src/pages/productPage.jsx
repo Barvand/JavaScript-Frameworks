@@ -6,7 +6,7 @@ export function ProductPage () {
 
   return (
     <>
-    <Product/>
+      <Product />
     </>
-  )
+  );
 }

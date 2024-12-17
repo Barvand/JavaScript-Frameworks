@@ -1,4 +1,5 @@
 import DeleteIcon from "../svg/deleteIcon";
+import { Link } from "react-router-dom";
 
 export default function Cart({
   carts,
@@ -23,6 +24,7 @@ export default function Cart({
               className="my-5 gradient-border-side-menu grid grid-cols-1 sm:grid-cols-12 p-3 items-center justify-items-center sm:justify-items-start"
             >
               {/* Image and Title Section */}
+
               <div className="col-span-2 flex items-center gap-2 justify-center sm:justify-start">
                 <img
                   src={cart.image.url}
@@ -32,10 +34,14 @@ export default function Cart({
               </div>
 
               {/* Price Section */}
-              <div className="col-span-12 sm:col-span-6 flex flex-col justify-center sm:justify-center mt-3 sm:mt-0">
-                <p className="font-bold">{cart.title}</p>
-                <p>${(cart.quantity * cart.price).toFixed(2)}</p>
-              </div>
+              
+                <div className="col-span-12 sm:col-span-6 flex flex-col justify-center sm:justify-center mt-3 sm:mt-0">
+                  <Link to={`/products/${cart.id}`}>
+                  <p className="font-bold">{cart.title}</p>
+                  <p>${(cart.quantity * cart.price).toFixed(2)}</p>
+                  </Link>
+                </div>
+            
 
               {/* Quantity and Delete Section */}
               <div className="col-span-12 sm:col-span-3 flex items-center justify-center sm:justify-center mt-3 sm:mt-0">

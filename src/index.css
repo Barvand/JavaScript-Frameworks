@@ -106,6 +106,7 @@ nav {
   margin-bottom: 5px;
 }
 
+
 .gradient-border-product-card {
   border-bottom: 3px solid;
   border-image: linear-gradient(to right, #00ffff 0%, #7d3c98 100%) 1;
@@ -134,6 +135,12 @@ nav {
 .gradient-border-bottom-yellow {
   border-image: linear-gradient(to right, #ffff00 0%, #7d3c98 100%) 1;
   border-bottom: 4px solid;
+  margin-bottom: 5px;
+}
+
+.gradient-border-bottom-top {
+    border-image: linear-gradient(to right, #ffff00 0%, #7d3c98 100%) 1;
+  border-top: 4px solid;
   margin-bottom: 5px;
 }
 
