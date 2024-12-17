@@ -8,6 +8,7 @@ import { ProductPage } from "./pages/productPage.jsx";
 import { ShoppingCart } from "./pages/ShoppingCart.jsx";
 import SideCartMenu from "./components/cart-side-menu.jsx";
 import Footer from "./components/footer.jsx";
+import SearchBar from "./components/searchbar,.jsx"
 
 const hideMenuOnCartPage = ["/cart"]; // Define routes where the menu is hidden
 
@@ -20,6 +21,7 @@ function App() {
       {/* Conditionally render SideCartMenu */}
       {!hideMenuOnCartPage.includes(location.pathname) && <SideCartMenu />}
       <div className="container p-2 mt-5">
+        <SearchBar />
         <Routes>
           <Route path="/products" element={<ProductsPage />} />
           <Route path="/" element={<Home />} />

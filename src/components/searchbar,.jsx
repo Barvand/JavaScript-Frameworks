@@ -36,13 +36,13 @@ export default function SearchBar() {
 
 return (
   <>
-    <div className="flex justify-end relative">
+    <div className="flex justify-center relative mb-10">
       <div className="flex flex-col px-4 py-3 rounded-md border-2 border-blue-500 overflow-hidden w-96">
         {/* Search input */}
         <div className="flex items-center">
           <input
             type="text"
-            placeholder="Search Something..."
+            placeholder="Find what you are looking for"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             className="w-full outline-none bg-transparent text-gray-600 text-sm font-roboto text-white"
