@@ -1,13 +1,13 @@
 export default function Footer() { 
   return (
-    <footer className="dark:bg-gray-900 mt-5">
+    <footer className="mt-5">
       <div className="container p-2 mt-5 gradient-border-top gradient-border-bottom-yellow">
         <div className="grid grid-cols-2 gap-8 px-4 py-6 lg:py-8 md:grid-cols-4">
           <div>
             <h2 className="text-xl mb-6 font-semibold uppercase text-text-neutral">
               Company
             </h2>
-            <ul className="text-gray-500 dark:text-gray-400 font-medium">
+            <ul className="text-gray-500 font-medium">
               <li className="mb-4">
                 <a href="#" className=" hover:underline">
                   About
@@ -34,7 +34,7 @@ export default function Footer() {
             <h2 className="text-xl mb-6 font-semibold uppercase text-neutral">
               Help center
             </h2>
-            <ul className="text-gray-500 dark:text-gray-400 font-medium">
+            <ul className="text-gray-500 font-medium">
               <li className="mb-4">
                 <a href="#" className="hover:underline">
                   Discord Server
@@ -59,7 +59,7 @@ export default function Footer() {
           </div>
           <div>
             <h2 className="mb-6 text-xl font-semibold text-neutral">Legal</h2>
-            <ul className="text-gray-500 dark:text-gray-400 font-medium">
+            <ul className="text-gray-500font-medium">
               <li className="mb-4">
                 <a href="#" className="hover:underline">
                   Privacy Policy
@@ -81,7 +81,7 @@ export default function Footer() {
             <h2 className="mb-6 text-xl font-semibold text-neutral">
               Download
             </h2>
-            <ul className="text-gray-500 dark:text-gray-400 font-medium">
+            <ul className="text-gray-500 font-medium">
               <li className="mb-4">
                 <a href="#" className="hover:underline">
                   iOS
@@ -108,13 +108,13 @@ export default function Footer() {
       </div>
       <div className="bg-black">
         <div className="container px-4 py-6 md:flex md:items-center md:justify-between ">
-          <span className="text-sm text-gray-500 dark:text-gray-300 sm:text-center">
+          <span className="text-sm text-gray-500sm:text-center">
             © 2024 Timeless™. All Rights Reserved.
           </span>
           <div className="flex mt-4 sm:justify-center md:mt-0 space-x-5 rtl:space-x-reverse">
             <a
               href="#"
-              className="text-gray-400 hover:text-gray-900 dark:hover:text-white"
+              className="text-gray-400 hover:text-gray-900"
             >
               <svg
                 className="w-4 h-4"
@@ -133,7 +133,7 @@ export default function Footer() {
             </a>
             <a
               href="#"
-              className="text-gray-400 hover:text-gray-900 dark:hover:text-white"
+              className="text-gray-400 hover:text-gray-900"
             >
               <svg
                 className="w-4 h-4"
@@ -148,7 +148,7 @@ export default function Footer() {
             </a>
             <a
               href="#"
-              className="text-gray-400 hover:text-gray-900 dark:hover:text-white"
+              className="text-gray-400 hover:text-gray-900"
             >
               <svg
                 className="w-4 h-4"
@@ -167,7 +167,7 @@ export default function Footer() {
             </a>
             <a
               href="#"
-              className="text-gray-400 hover:text-gray-900 dark:hover:text-white"
+              className="text-gray-400 hover:text-gray-900"
             >
               <svg
                 className="w-4 h-4"
@@ -186,7 +186,7 @@ export default function Footer() {
             </a>
             <a
               href="#"
-              className="text-gray-400 hover:text-gray-900 dark:hover:text-white"
+              className="text-gray-400 hover:text-gray-900"
             >
               <svg
                 className="w-4 h-4"

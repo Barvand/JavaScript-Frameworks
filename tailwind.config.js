@@ -12,7 +12,7 @@ export default {
         neutral: "#C0C0C0", // Silver Chrome
         pink: "#FF007F", // Laser pink
         lime: "#AFFF33", // Lime green
-        danger: "#EF4444", // Example: A red for errors
+        danger: "#EF4444", 
         price: "#39FF14",
       },
     },
