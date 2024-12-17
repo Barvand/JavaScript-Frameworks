@@ -68,13 +68,13 @@ export function ProductCards() {
         </button>
 
         {/* Filter buttons */}
-        {/* <button
+      {/* <button
           onClick={() => sortProducts("low")}
           className={`border-solid border-2 border-gray-600 p-1 ${
             isActive === "low" ? "isActive" : ""
           }`}
         > */}
-          {/* Lowest Price
+      {/* Lowest Price
         </button>
         <button
           onClick={() => sortProducts("high")}
@@ -96,8 +96,8 @@ export function ProductCards() {
                 alt={product.image.alt}
               ></img>
             </div>
-            <div className="max-height-cards">
-              <h3 className="py-4 text-xl font-bold dark:text-white gradient-border-bottom">
+            <div className="max-height-cards p-1">
+              <h3 className="py-4 text-xl font-bold dark:text-white gradient-border-product-card">
                 {product.title}
               </h3>
               <div className="py-4">
@@ -112,9 +112,8 @@ export function ProductCards() {
                         <span className="text-green-500 font-bold">
                           ${product.discountedPrice}
                         </span>
-                        <span className="text-red-500 ml-2">
-                          before </span> 
-                          <span className="text-red-500 line-through">
+                        <span className="text-red-500 ml-2">before </span>
+                        <span className="text-red-500 line-through">
                           ${product.price}
                         </span>
                         <span className="ml-2 absolute bg-secondary right-0 top-0 w-full font-bold text-neon p-1 text-center">

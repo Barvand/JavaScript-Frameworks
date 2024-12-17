@@ -75,11 +75,6 @@ nav {
   margin-bottom: 50px;
 }
 
-.isActive {
-  background-color: #4caf50; /* Green background */
-  color: white; /* White text */
-}
-
 .img-container {
   overflow: hidden; /* Ensures the zoomed-in part doesn't spill outside */
   background-color: black; /* Sets container background for better contrast */
@@ -105,24 +100,29 @@ nav {
 }
 
 .gradient-border-bottom {
-  border-bottom: 4px solid;
-  border-right: 4px solid;
+  border-bottom: 3px solid;
+  border-right: 3px solid;
   border-image: linear-gradient(to right, #00ffff 0%, #7d3c98 100%) 1;
   margin-bottom: 5px;
 }
 
+.gradient-border-product-card {
+  border-bottom: 3px solid;
+  border-image: linear-gradient(to right, #00ffff 0%, #7d3c98 100%) 1;
+}
+
 .gradient-border-bottom:hover {
-  box-shadow: 0 0 10px #7d3c98, 0 0 20px #7d3c98;
+  box-shadow: 0px 0px 0 #ad276a, -3px -3px 0 #00ffff;
 }
 .gradient-border-bottom-pink {
   border-image: linear-gradient(to right, #afff33 0%, #7d3c98 100%) 1;
-  border-bottom: 4px solid;
-  border-right: 4px solid;
+  border-bottom: 3px solid;
+  border-right: 3px solid;
   margin-bottom: 5px;
 }
 
 .gradient-border-bottom-pink:hover {
-  box-shadow: 0 0 10px #ad276a, 0 0 20px #ad276a;
+  box-shadow: 0px 0px 0 #ad276a, -3px -3px 0 #afff33;
 }
 
 .gradient-border-top {
