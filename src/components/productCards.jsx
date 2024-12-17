@@ -54,50 +54,50 @@ export function ProductCards() {
                   alt={product.image.alt}
                 ></img>
               </div>
-              <div className="max-height-cards p-1">
-                <h3 className="py-4 text-xl font-bold dark:text-white gradient-border-product-card">
-                  {product.title}
-                </h3>
-                <div className="py-4">
-                  <p className="py-2">{product.description}</p>
-                  <div className="product-prices flex gap-2">
-                    <p className="text-green-500 font-bold">
-                      {product.discountedPrice === product.price ? (
-                        // No discount case: Display only the regular price
-                        <span className="font-bold">${product.price}</span>
-                      ) : (
-                        <>
-                          <span className="text-green-500 font-bold">
-                            ${product.discountedPrice}
-                          </span>
-                          <span className="text-red-500 ml-2">before </span>
-                          <span className="text-red-500 line-through">
-                            ${product.price}
-                          </span>
-                          <span className="ml-2 absolute bg-secondary right-0 top-0 w-full font-bold text-neon p-1 text-center">
-                            {Math.round(
-                              ((product.price - product.discountedPrice) /
-                                product.price) *
-                                100
-                            )}
-                            % Off!
-                          </span>
-                        </>
-                      )}
-                    </p>
-                  </div>
+            </Link>
+            <div className="max-height-cards p-1">
+              <h3 className="py-4 text-xl font-bold dark:text-white gradient-border-product-card">
+                {product.title}
+              </h3>
+              <div className="py-4">
+                <p className="py-2">{product.description}</p>
+                <div className="product-prices flex gap-2">
+                  <p className="text-green-500 font-bold">
+                    {product.discountedPrice === product.price ? (
+                      // No discount case: Display only the regular price
+                      <span className="font-bold">${product.price}</span>
+                    ) : (
+                      <>
+                        <span className="text-green-500 font-bold">
+                          ${product.discountedPrice}
+                        </span>
+                        <span className="text-red-500 ml-2">before </span>
+                        <span className="text-red-500 line-through">
+                          ${product.price}
+                        </span>
+                        <span className="ml-2 absolute bg-secondary right-0 top-0 w-full font-bold text-neon p-1 text-center">
+                          {Math.round(
+                            ((product.price - product.discountedPrice) /
+                              product.price) *
+                              100
+                          )}
+                          % Off!
+                        </span>
+                      </>
+                    )}
+                  </p>
                 </div>
               </div>
-              <div className="flex justify-between py-2">
-                <button
-                  className="font-bold py-2 px-4 rounded gradient-border-bottom"
-                  onClick={() => addToCart(product)}
-                >
-                  Add to cart
-                </button>
-                <ViewProductBtn id={product.id} />
-              </div>
-            </Link>
+            </div>
+            <div className="flex justify-between py-2">
+              <button
+                className="font-bold py-2 px-4 rounded gradient-border-bottom"
+                onClick={() => addToCart(product)}
+              >
+                Add to cart
+              </button>
+              <ViewProductBtn id={product.id} />
+            </div>
           </div>
         ))}
       </div>
