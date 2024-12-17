@@ -43,6 +43,7 @@ export function ProductCards() {
 
   return (
     <>
+      <h1 className="text-3xl text-center md:text-4xl py-3"> Our products </h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 xl:grid-cols-4 gap-4">
         {products.map((product) => (
           <div key={product.id} className="p-2 relative">
