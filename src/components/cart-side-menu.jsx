@@ -37,12 +37,12 @@ export default function SideCartMenu() {
 
       {/* Side Cart */}
       <div
-        className={`fixed w-full sm:w-3/4 md:w-2/4 lg:w-1/3 xl:w-1/4 right-0 top-0 p-3 bg-neutral h-full z-40 transform transition-transform duration-500 ease-in-out ${
+        className={`fixed w-full sm:w-3/4 md:w-2/4 lg:w-1/3 xl:w-1/4 right-0 top-0 p-3 bg-primary h-full z-40 border-l-4 border-black transform transition-transform duration-500 ease-in-out ${
           showSideCart ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <div className="flex flex-col gap-5 text-black">
-          <h1 className="text-xl text-center text-black">Shopping Cart</h1>
+        <div className="flex flex-col gap-5">
+          <h1 className="text-xl text-center">Shopping Cart</h1>
           {carts.length === 0 ? (
             <p className="text-lg text-center mt-20">Your cart is empty</p>
           ) : (
@@ -62,11 +62,9 @@ export default function SideCartMenu() {
                   </div>
 
                   {/* Price Section */}
-                  <div className="col-span-12 sm:col-span-6 flex flex-col justify-center sm:justify-center mt-3 sm:mt-0">
+                  <div className="col-span-12 sm:col-span-6 flex flex-col justify-center sm:justify-center mt-3 p-2 sm:mt-0">
                     <p className="font-bold">{cart.title}</p>
-                    <p>
-                      ${(cart.quantity * cart.price).toFixed(2)}
-                    </p>
+                    <p>${(cart.quantity * cart.price).toFixed(2)}</p>
                   </div>
 
                   {/* Quantity and Delete Section */}
@@ -98,24 +96,32 @@ export default function SideCartMenu() {
               <div className="mt-auto flex flex-col items-end">
                 <button
                   onClick={clearCart}
-                  className={`mt-5 px-5 py-2 bg-red-300 rounded ${
+                  className={`mt-5 px-5 py-2 bg-red-500 rounded hover:bg-red-700 hover:text-white text-black ${
                     carts.length === 0 ? "opacity-50 cursor-not-allowed" : ""
                   }`}
                   disabled={carts.length === 0}
                 >
                   Empty cart
                 </button>
-              </div> 
-                <div className="flex flex-col mt-5">
-                  <p className="font-bold">
-                    Sub total: <span className="text-green-500">$ </span>
-                    {totalCost}
-                  </p>
-                  <button className="btn bg-green-500 text-black px-5 py-2 font-bold">
-                    Checkout
-                  </button>
-                </div>
               </div>
+              <div className="">
+                <p className="text-sm">
+                  {" "}
+                  You have{" "}
+                  {carts.reduce((total, item) => total + item.quantity, 0)}{" "}
+                  Item(s) in your cart{" "}
+                </p>
+              </div>
+              <div className="flex flex-col mt-5 items-center ">
+                <p className="font-bold">
+                  Sub total: <span className="text-green-500">$ </span>
+                  {totalCost}
+                </p>
+                <button className="hover:bg-green-700 hover:text-white bg-green-500 text-black px-5 py-2 font-bold rounded mt-2 w-full">
+                  Checkout
+                </button>
+              </div>
+            </div>
           )}
         </div>
         <button
