@@ -8,7 +8,7 @@ export function Product() {
   const [isError, setIsError] = useState(null);
   let { id } = useParams();
 
-  const { addToCart } = useCartStore(); 
+  const { addToCart } = useCartStore();
 
   useEffect(() => {
     async function getData(url) {
@@ -40,21 +40,28 @@ export function Product() {
 
   return (
     <div className="md:container-md grid grid-cols-12 grid-rows-2 gap-4 mt-5">
+      {/* Image Section */}
       <div
         key={data.id}
-        className="col-span-12 md:col-span-8 bg-slate-100 flex items-center justify-center rounded"
+        className="col-span-12 md:col-span-8 bg-black flex items-center justify-center rounded h-96"
       >
-        <img
-          className="w-1/2 content-center py-2 justify-center drop-shadow-md"
-          src={data.image.url}
-          alt={data.image.alt}
-        />
+        <div className="w-full h-full">
+          <img
+            className="drop-shadow-md object-contain w-full h-full rounded"
+            src={data.image.url}
+            alt={data.image.alt}
+          />
+        </div>
       </div>
-      <div className="col-span-12 md:col-span-4">
-        <h2 className="title">{data.title} </h2>
+
+      {/* Text Section */}
+      <div className="col-span-12 md:col-span-4 p-4 rounded">
+        <h2 className="title text-2xl font-bold mb-2 gradient-border-bottom-yellow">
+          {data.title}
+        </h2>
         <p>
           {data.rating === 0 ? (
-            <div className="text-slate-500"> No rating yet </div>
+            <div className="text-slate-500">No rating yet</div>
           ) : (
             <>
               {data.rating}
@@ -67,40 +74,38 @@ export function Product() {
             </>
           )}
         </p>
-        <p>{data.description}</p>
-        <div className="product-prices flex gap-2">
-          <p className="text-green-500 font-bold">
-            {data.discountedPrice === data.price ? (
-              // No discount case: Display only the regular price
-              <span className="font-bold">${data.price}</span>
-            ) : (
-              <>
-                <span className="text-green-500 font-bold">
-                  ${data.discountedPrice}
-                </span>
-                <span className="text-red-500 ml-2">before </span>
-                <span className="text-red-500 line-through">${data.price}</span>
-                <span className="ml-2 bg-secondary w-full font-bold text-neon p-1 text-center">
-                  {Math.round(
-                    ((data.price - data.discountedPrice) / data.price) * 100
-                  )}
-                  % Off!
-                </span>
-              </>
-            )}
-          </p>
+        <p className="mt-2">{data.description}</p>
+        <div className="product-prices flex gap-2 mt-4 flex-wrap">
+          {data.discountedPrice === data.price ? (
+            <span className="text-green-500 font-bold">${data.price}</span>
+          ) : (
+            <>
+              <span className="text-green-500 font-bold">
+                ${data.discountedPrice}
+              </span>
+              <span className="text-red-500 ml-2">before</span>
+              <span className="text-red-500 line-through">${data.price}</span>
+              <span className="ml-2 bg-secondary font-bold text-neon p-1">
+                {Math.round(
+                  ((data.price - data.discountedPrice) / data.price) * 100
+                )}
+                % Off!
+              </span>
+            </>
+          )}
         </div>
-        <div className="flex gap-2 mt-2">
+        <div className="flex gap-2 mt-4">
           <button
             className="font-bold py-2 px-4 rounded gradient-border-bottom"
             onClick={() => addToCart(data)}
           >
-            {" "}
-            Add to cart{" "}
+            Add to cart
           </button>
         </div>
       </div>
-      <div className="col-span-12">
+
+      {/* Reviews Section */}
+      <div className="col-span-12 gradient-border-bottom-top">
         <Reviews reviews={data.reviews} />
       </div>
     </div>
@@ -113,15 +118,22 @@ export function Reviews({ reviews }) {
   }
 
   return (
-    <div className="col-span-12">
-      <h2>Reviews</h2>
+    <>
+    <h2>Reviews</h2>
+    <div className="flex gap-2 flex-wrap sm:items-center">
       {reviews.map((review, index) => (
-        <div key={index} className="bg-green-200">
-          <p>{review.username}</p>
+        <div key={index} className="col-span-3 p-2 w-96 border ">
+          <p className="text-xl text-white">{review.username}</p>
+          <p>
+            <span className="stars">
+              {"★".repeat(review.rating)}
+              {"☆".repeat(5 - review.rating)}
+            </span>
+          </p>
           <p>{review.description}</p>
-          <p>Rating: {review.rating}</p>
         </div>
       ))}
     </div>
+    </>
   );
 }

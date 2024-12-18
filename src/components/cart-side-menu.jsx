@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useCartStore } from "../store/cart";
-import Cart from "./cart";
+import { Link } from "react-router-dom";
 import { AiOutlineClose } from "react-icons/ai";
 import DeleteIcon from "../svg/deleteIcon";
 
@@ -63,8 +63,10 @@ export default function SideCartMenu() {
 
                   {/* Price Section */}
                   <div className="col-span-12 sm:col-span-6 flex flex-col justify-center sm:justify-center mt-3 p-2 sm:mt-0">
-                    <p className="font-bold">{cart.title}</p>
-                    <p>${(cart.quantity * cart.price).toFixed(2)}</p>
+                    <Link to={`/products/${cart.id}`}>
+                      <p className="font-bold">{cart.title}</p>
+                      <p>${(cart.quantity * cart.price).toFixed(2)}</p>
+                    </Link>
                   </div>
 
                   {/* Quantity and Delete Section */}
