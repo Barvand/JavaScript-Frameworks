@@ -119,21 +119,21 @@ export function Reviews({ reviews }) {
 
   return (
     <>
-    <h2>Reviews</h2>
-    <div className="flex gap-2 flex-wrap sm:items-center">
-      {reviews.map((review, index) => (
-        <div key={index} className="col-span-3 p-2 w-96 border">
-          <p className="text-xl text-white">{review.username}</p>
-          <p>
-            <span className="stars">
-              {"★".repeat(review.rating)}
-              {"☆".repeat(5 - review.rating)}
-            </span>
-          </p>
-          <p>{review.description}</p>
-        </div>
-      ))}
-    </div>
+      <h2>Reviews</h2>
+      <div className="flex gap-2 flex-wrap sm:items-center">
+        {reviews.map((review, index) => (
+          <div key={index} className="col-span-3 p-2 w-96 border">
+            <p className="text-xl text-white">{review.username}</p>
+            <p>
+              <span className="stars">
+                {"★".repeat(review.rating)}
+                {"☆".repeat(5 - review.rating)}
+              </span>
+            </p>
+            <p>{review.description}</p>
+          </div>
+        ))}
+      </div>
     </>
   );
 }
