@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 export function ContactPageForm() {
   const navigate = useNavigate();
   const [showMessage, setShowMessage] = useState(false);
+  const [showErrorMessage, setErrorMessage] = useState(false);
 
   const [values, setValues] = useState({
     name: "",
@@ -115,12 +116,16 @@ export function ContactPageForm() {
     const allValid = Object.values(validFields).every((isValid) => isValid);
     if (allValid) {
       setShowMessage(true); // Show success message
-      // Add a delay of 2 seconds (2000ms) before navigating
       setTimeout(() => {
         navigate("/contact/success/");
       }, 2000);
     } else {
-      console.log("Form has errors");
+      setErrorMessage(true); // Show error message
+
+      // Hide error message after 5 seconds (5000ms)
+      setTimeout(() => {
+        setErrorMessage(false); // Hide error message
+      }, 5000);
     }
   };
 
@@ -179,8 +184,13 @@ export function ContactPageForm() {
         </div>
       ))}
       {showMessage && (
-        <div className="p-4 mb-4 text-sm text-green-800 rounded bg-green-50 dark:bg-gray-800 dark:text-green-400">
+        <div className="p-4 mb-4 text-sm text-green-800 rounded bg-green-50">
           Form submitted. Please wait...
+        </div>
+      )}
+      {showErrorMessage && (
+        <div className="p-4 mb-4 text-sm text-red-800 rounded bg-red-50 ">
+          Are you sure this is correct?
         </div>
       )}
       <button
