@@ -1,5 +1,5 @@
 
-import { Product } from "../components/product";
+import { Product } from "../components/Product";
 
 
 export function ProductPage () { 

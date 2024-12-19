@@ -1,15 +1,14 @@
 import { useLocation } from "react-router-dom";
-import { Navigation } from "./components/nav";
-import { ProductsPage } from "./pages/products";
-import { ContactPage } from "./pages/contact";
-import { Home } from "./pages/home";
+import { Navigation } from "./components/Nav.jsx";
+import { ProductsPage } from "./pages/Products.jsx";
+import { ContactPage } from "./pages/Contact.jsx";
+import { Home } from "./pages/Home.jsx";
 import { Route, Routes } from "react-router-dom";
-import { ProductPage } from "./pages/productPage.jsx";
+import { ProductPage } from "./pages/ProductPage.jsx";
 import { ShoppingCart } from "./pages/ShoppingCart.jsx";
-import SideCartMenu from "./components/cart-side-menu.jsx";
-import Footer from "./components/footer.jsx";
-import SearchBar from "./components/searchbar,.jsx"
-import SuccessPage from "./pages/success.jsx";
+import SideCartMenu from "./components/CartSideMenu.jsx";
+import Footer from "./components/Footer.jsx";
+import SuccessPage from "./pages/Success.jsx";
 
 const hideMenuOnCartPage = ["/cart"]; // Define routes where the menu is hidden
 
@@ -28,10 +27,11 @@ function App() {
           <Route path="/products/:id" element={<ProductPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/cart" element={<ShoppingCart />} />
-          <Route path="/contact/success/" element={<SuccessPage/>} />
+          <Route path="/contact/success/" element={<SuccessPage />} />
+          
         </Routes>
       </div>
-      <Footer className="flex-end"/>
+      <Footer className="flex-end" />
     </>
   );
 }

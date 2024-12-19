@@ -1,9 +1,9 @@
-import { ProductCards } from "../components/productCards.jsx";
+import { ProductCards } from "../components/ProductCards.jsx";
 
 export function ProductsPage() {
   return (
     <>
-        <ProductCards />
+      <ProductCards />
     </>
   );
 }
