@@ -119,7 +119,12 @@ export function ContactPageForm() {
         navigate("/contact/success/");
       }, 2000);
     } else {
-      console.log("Error in form");
+      setErrorMessage(true); // Show error message
+
+      // Hide error message after 5 seconds (5000ms)
+      setTimeout(() => {
+        setErrorMessage(false); // Hide error message
+      }, 5000);
     }
   };
 
@@ -133,7 +138,7 @@ export function ContactPageForm() {
               className="block text-sm font-bold mb-2"
               htmlFor={input.name}
             >
-              {input.label}
+              {input.label} <span className="text-red-500">*</span>
             </label>
             {input.type === "textarea" ? (
               <textarea
@@ -158,8 +163,8 @@ export function ContactPageForm() {
                 name={input.name}
                 type={input.type}
                 placeholder={input.placeholder}
-                required={input.required}
                 value={values[input.name]}
+                required={input.required}
                 onChange={handleChange}
                 onBlur={handleBlur} // Trigger validation when user leaves the field
                 className={`appearance-none block w-full bg-gray-200 text-gray-700 border ${
