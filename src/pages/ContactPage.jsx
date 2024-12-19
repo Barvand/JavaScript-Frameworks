@@ -1,6 +1,6 @@
-import { ContactPageForm } from "../components/contactForm";
-import ContactCards from "../components/contactCards";
-import { ContactDetails } from "../components/contactDetails";
+import { ContactPageForm } from "../components/contactform";
+import ContactCards from "../components/contactcards";
+import { ContactDetails } from "../components/contactdetails";
 
 export function ContactPage() {
   return (
