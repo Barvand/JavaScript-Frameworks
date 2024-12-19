@@ -8,8 +8,8 @@ import { ProductPage } from "./pages/productPage.jsx";
 import { ShoppingCart } from "./pages/ShoppingCart.jsx";
 import SideCartMenu from "./components/cart-side-menu.jsx";
 import Footer from "./components/footer.jsx";
-import SearchBar from "./components/searchbar,.jsx"
 import SuccessPage from "./pages/success.jsx";
+import CompletedOrder from "./pages/Completed.jsx";
 
 const hideMenuOnCartPage = ["/cart"]; // Define routes where the menu is hidden
 
@@ -28,10 +28,11 @@ function App() {
           <Route path="/products/:id" element={<ProductPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/cart" element={<ShoppingCart />} />
-          <Route path="/contact/success/" element={<SuccessPage/>} />
+          <Route path="/contact/success/" element={<SuccessPage />} />
+          <Route path="/cart/complete/" element={<CompletedOrder />} />
         </Routes>
       </div>
-      <Footer className="flex-end"/>
+      <Footer className="flex-end" />
     </>
   );
 }

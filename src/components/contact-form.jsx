@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 export function ContactPageForm() {
   const navigate = useNavigate();
   const [showMessage, setShowMessage] = useState(false);
-  const [showErrorMessage, setErrorMessage] = useState(false);
 
   const [values, setValues] = useState({
     name: "",
@@ -120,12 +119,7 @@ export function ContactPageForm() {
         navigate("/contact/success/");
       }, 2000);
     } else {
-      setErrorMessage(true); // Show error message
-
-      // Hide error message after 5 seconds (5000ms)
-      setTimeout(() => {
-        setErrorMessage(false); // Hide error message
-      }, 5000);
+      console.log("Error in form");
     }
   };
 
@@ -147,6 +141,7 @@ export function ContactPageForm() {
                 name={input.name}
                 placeholder={input.placeholder}
                 value={values[input.name]}
+                required={input.required}
                 onChange={handleChange}
                 onBlur={handleBlur} // Trigger validation when user leaves the field
                 className={`appearance-none block w-full bg-gray-200 text-gray-700 border ${
@@ -163,6 +158,7 @@ export function ContactPageForm() {
                 name={input.name}
                 type={input.type}
                 placeholder={input.placeholder}
+                required={input.required}
                 value={values[input.name]}
                 onChange={handleChange}
                 onBlur={handleBlur} // Trigger validation when user leaves the field
@@ -186,11 +182,6 @@ export function ContactPageForm() {
       {showMessage && (
         <div className="p-4 mb-4 text-sm text-green-800 rounded bg-green-50">
           Form submitted. Please wait...
-        </div>
-      )}
-      {showErrorMessage && (
-        <div className="p-4 mb-4 text-sm text-red-800 rounded bg-red-50 ">
-          Are you sure this is correct?
         </div>
       )}
       <button
