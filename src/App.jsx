@@ -2,7 +2,7 @@ import { useLocation } from "react-router-dom";
 import { Nav } from "./components/nav.jsx";
 import { ProductsPage } from "./pages/Product.jsx";
 import { ContactPage } from "./pages/ContactPage.jsx"; 
-import { Home } from "./pages/Home.jsx";
+import { Home } from "./pages/HomePage.jsx";
 import { Route, Routes } from "react-router-dom";
 import { ProductPage } from "./pages/ProductPage.jsx";
 import { ShoppingCart } from "./pages/ShoppingCart.jsx";
