@@ -3,7 +3,8 @@ import Logo from "../svg/logo";
 import { useCartStore } from "../store/cart";
 import Hamburger from "hamburger-react";
 import { useState, useRef, useEffect } from "react";
-import SearchBar from "./Searchbar,";
+import SearchBar from "./searchbar,";
+
 
 export function Navigation() {
   const { carts } = useCartStore();

@@ -1,6 +1,6 @@
 import React from "react";
 import { useCartStore } from "../store/cart";
-import Cart from "../components/Cart";
+import Cart from "../components/cart";
 
 export function ShoppingCart() {
   const {
