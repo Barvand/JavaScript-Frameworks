@@ -119,12 +119,7 @@ export function ContactPageForm() {
         navigate("/contact/success/");
       }, 2000);
     } else {
-      setErrorMessage(true); // Show error message
-
-      // Hide error message after 5 seconds (5000ms)
-      setTimeout(() => {
-        setErrorMessage(false); // Hide error message
-      }, 5000);
+      console.log("Something went wrong");
     }
   };
 
