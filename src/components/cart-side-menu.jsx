@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { useCartStore } from "../store/cart";
 import { Link } from "react-router-dom";
 import { AiOutlineClose } from "react-icons/ai";
@@ -97,7 +97,10 @@ export default function SideCartMenu() {
               ))}
               <div className="mt-auto flex flex-col items-end">
                 <button
-                  onClick={clearCart}
+                  onClick={() => {
+                    clearCart();
+                    toggleSideCart(false);
+                  }}
                   className={`mt-5 px-5 py-2 bg-red-500 rounded hover:bg-red-700 hover:text-white text-black ${
                     carts.length === 0 ? "opacity-50 cursor-not-allowed" : ""
                   }`}
@@ -119,9 +122,11 @@ export default function SideCartMenu() {
                   Sub total: <span className="text-green-500">$ </span>
                   {totalCost}
                 </p>
-                <button className="hover:bg-green-700 hover:text-white bg-green-500 text-black px-5 py-2 font-bold rounded mt-2 w-full">
-                  Checkout
-                </button>
+                <Link to={`/cart`}>
+                  <button className="hover:bg-green-700 hover:text-white bg-green-500 text-black px-5 py-2 font-bold rounded mt-2 w-full">
+                    Checkout
+                  </button>
+                </Link>
               </div>
             </div>
           )}
