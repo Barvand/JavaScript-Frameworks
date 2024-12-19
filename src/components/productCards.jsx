@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import ViewProductBtn from "./Viewproductbtn";
+import ViewProductBtn from "./viewproductbtn";
 import { useCartStore } from "../store/cart";
 import { Link } from "react-router-dom";
 

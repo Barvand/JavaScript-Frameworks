@@ -6,8 +6,8 @@ import { Home } from "./pages/HomePage.jsx";
 import { Route, Routes } from "react-router-dom";
 import { ProductPage } from "./pages/Product.jsx";
 import { ShoppingCart } from "./pages/CartPage.jsx";
-import SideCartMenu from "./components/CartSideMenu.jsx";
-import Footer from "./components/Footer.jsx";
+import SideCartMenu from "./components/cartSideMenu.jsx";
+import Footer from "./components/footer.jsx";
 import SuccessPage from "./pages/SuccessPage.jsx";
 import CompletedOrder from "./pages/Completed.jsx";
 

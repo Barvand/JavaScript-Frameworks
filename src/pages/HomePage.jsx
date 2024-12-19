@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import { ProductCards } from "../components/ProductCards.jsx";
-import Hero from "../components/Hero.tsx";
+import { ProductCards } from "../components/productCards.jsx";
+import Hero from "../components/hero.tsx";
 
 export function Home() {
   // const [showContent, setShowContent] = useState(false);
