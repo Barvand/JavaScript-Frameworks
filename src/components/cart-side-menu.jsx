@@ -110,8 +110,8 @@ export default function SideCartMenu() {
               </div>
               <div className="">
                 <p className="text-sm">
-                  You have
-                  {carts.reduce((total, item) => total + item.quantity, 0)}{" "}
+                  You have{" "}
+                   <span className="text-white">{carts.reduce((total, item) => total + item.quantity, 0)} </span> {" "}
                   Item(s) in your cart
                 </p>
               </div>
