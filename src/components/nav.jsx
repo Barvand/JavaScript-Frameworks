@@ -5,7 +5,7 @@ import Hamburger from "hamburger-react";
 import { useState } from "react";
 import SearchBar from "./Searchbar,";
 
-export function Navigation() {
+export function Nav() {
   const { carts } = useCartStore();
   const [isOpen, setOpen] = useState(false);
 

@@ -1,5 +1,5 @@
 import { useLocation } from "react-router-dom";
-import { Navigation } from "./components/Nav.jsx";
+import { Nav } from "./components/nav.jsx";
 import { ProductsPage } from "./pages/Product.jsx";
 import { ContactPage } from "./pages/Contact.jsx";
 import { Home } from "./pages/Home.jsx";
@@ -18,7 +18,7 @@ function App() {
 
   return (
     <>
-      <Navigation />
+      <Nav />
       {/* Conditionally render SideCartMenu */}
       {!hideMenuOnCartPage.includes(location.pathname) && <SideCartMenu />}
       <div className="container p-2 mt-5 flex flex-col">
@@ -29,8 +29,7 @@ function App() {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/cart" element={<ShoppingCart />} />
           <Route path="/contact/success/" element={<SuccessPage />} />
-          <Route path="/cart/complete/" element={<CompletedOrder/> } />
-          
+          <Route path="/cart/complete/" element={<CompletedOrder />} />
         </Routes>
       </div>
       <Footer className="flex-end" />
