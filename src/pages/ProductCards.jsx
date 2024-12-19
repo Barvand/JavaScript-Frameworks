@@ -1,4 +1,4 @@
-import  ProductCards  from "../components/ProductCards.jsx";
+import ProductCards from "../components/productcards.jsx";
 
 export default function ProductsPage() {
   return (

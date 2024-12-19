@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import ProductCards  from "../components/ProductCards.jsx";
+import ProductCards from "../components/productcards.jsx";
 import Hero from "../components/hero.tsx";
 
 export default function Home() {
