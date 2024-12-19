@@ -42,7 +42,7 @@ export function ContactDetails() {
                   When can I expect my delivery?
                 </h1>
                 <p className="text-primary">
-                  You can reach us through any of the following methods:
+                  We ship out products from our warehouse after 1 to 3 business days.
                 </p>
               </div>
             </div>
@@ -56,12 +56,10 @@ export function ContactDetails() {
               {/* Text Section */}
               <div className="ml-4 text-primary">
                 <h1 className="text-3xl font-bold text-secondary mb-2">
-                  Contact Timeless
+                  Incredible prices
                 </h1>
                 <p className="">
-                  At Timeless, we’re here to help! Whether you have questions
-                  about our products, need assistance with your order, or want
-                  to provide feedback, our team is ready to assist you.
+                 We simply have amazing prices, As we are contact with the direct supplier of most items. This allows us to keep our marging low for our customers. 
                 </p>
               </div>
             </div>
