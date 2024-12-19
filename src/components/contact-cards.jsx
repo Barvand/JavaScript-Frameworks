@@ -3,7 +3,7 @@ import { AiFillThunderbolt } from "react-icons/ai";
 export default function ContactCards() {
   return (
     <>
-      <div className="bg-purple-500 md:h-auto col-span-12 lg:col-span-6 lg:h-64 rounded p-6 grid">
+      <div className="bg-purple-500 md:h-auto col-span-12 lg:col-span-6 lg:h-64 rounded p-6 grid font-semibold">
         <div className="flex items-center">
           {/* Icon Section */}
           <div className="flex-shrink-1">
@@ -25,7 +25,7 @@ export default function ContactCards() {
           </div>
         </div>
       </div>
-      <div className="bg-yellow-500 col-span-12 lg:col-span-6 rounded lg:h-64 p-6 grid">
+      <div className="bg-yellow-500 col-span-12 lg:col-span-6 rounded lg:h-64 p-6 grid font-semibold">
         <div className="flex items-center">
           {/* Icon Section */}
           <div className="flex-shrink-1">

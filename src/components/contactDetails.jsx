@@ -10,9 +10,6 @@ export function ContactDetails() {
   return (
     <>
         <div className="flex flex-col">
-          <h1 className="text-3xl font-bold text-center pt-3 text-black">
-            Frequently asked questions
-          </h1>
           <div className="md:h-auto col-span-12 lg:col-span-6 p-3 grid">
             <div className="flex items-center">
               {/* Icon Section */}
@@ -22,7 +19,7 @@ export function ContactDetails() {
               {/* Text Section */}
               <div className="ml-4">
                 <h1 className="text-3xl font-bold text-secondary mb-2">
-                  Contact Timeless
+                  Frequently asked questions
                 </h1>
                 <p className="text-primary">
                   At Timeless, we’re here to help! Whether you have questions
