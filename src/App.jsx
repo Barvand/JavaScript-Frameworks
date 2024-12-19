@@ -4,7 +4,7 @@ import { ProductsPage } from "./pages/ProductCards.jsx";
 import { ContactPage } from "./pages/ContactPage.jsx"; 
 import { Home } from "./pages/HomePage.jsx";
 import { Route, Routes } from "react-router-dom";
-import { ProductPage } from "./pages/ProductPage.jsx";
+import { ProductPage } from "./pages/Product.jsx";
 import { ShoppingCart } from "./pages/CartPage.jsx";
 import SideCartMenu from "./components/CartSideMenu.jsx";
 import Footer from "./components/Footer.jsx";
