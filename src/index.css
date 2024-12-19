@@ -6,13 +6,9 @@
   font-family: Roboto, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  color-scheme: light dark;
   color: #c0c0c0;
-  background-color: #fcfcfc;
+  background-color: #0a122a;
   font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 h1,
@@ -25,6 +21,19 @@ h6 {
   color: #fff;
 }
 
+#root { 
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; 
+}
+
+html,
+body {
+  height: 100%; /* Ensure the height of the HTML and body elements is 100% */
+  margin: 0;
+}
+
+
 body {
   background-color: #0a122a;
   position: relative;
@@ -33,6 +42,12 @@ body {
 nav {
   background-color: #0a122a;
   color: white;
+}
+
+.container {
+  flex: 1; /* Allows the container to grow and fill available space */
+  display: flex;
+  flex-direction: column; /* Ensures child elements stack vertically */
 }
 
 .border-bottom-styling {
@@ -60,8 +75,8 @@ nav {
   font-size: 13px;
   font-weight: 600;
   transition: all 0.2s ease-in-out;
-  background-color: #00FFFF;
-  color: #7D3C98;
+  background-color: #00ffff;
+  color: #7d3c98;
 }
 
 .hamburger-width {
@@ -106,7 +121,6 @@ nav {
   margin-bottom: 5px;
 }
 
-
 .gradient-border-product-card {
   border-bottom: 3px solid;
   border-image: linear-gradient(to right, #00ffff 0%, #7d3c98 100%) 1;
@@ -139,7 +153,7 @@ nav {
 }
 
 .gradient-border-bottom-top {
-    border-image: linear-gradient(to right, #ffff00 0%, #7d3c98 100%) 1;
+  border-image: linear-gradient(to right, #ffff00 0%, #7d3c98 100%) 1;
   border-top: 4px solid;
   margin-bottom: 5px;
 }
@@ -155,7 +169,7 @@ nav {
 }
 
 .gradient-border-side-menu:hover {
-   box-shadow: 0 0 5px #ffffff, 0 0 10px #000000;
+  box-shadow: 0 0 5px #ffffff, 0 0 10px #000000;
 }
 
 .max-height-cards {
@@ -188,8 +202,15 @@ nav {
   background-color: #ff4500; /* Darker red on hover */
 }
 
-.btn-checkout:hover { 
-  background-image: linear-gradient(135deg, #AFFF33, #00FFFF);
+.btn-checkout:hover {
+  background-image: linear-gradient(135deg, #afff33, #00ffff);
+}
+
+
+footer {
+  background-color: #0a122a; 
+  text-align: center;
+  padding: 10px 0;
 }
 
 .error-message {

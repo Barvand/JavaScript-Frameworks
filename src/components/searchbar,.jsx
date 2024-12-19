@@ -36,7 +36,7 @@ export default function SearchBar() {
 
 return (
   <>
-    <div className="flex justify-center relative mb-10">
+    <div className="flex justify-end relative">
       <div className="flex flex-col px-4 py-3 rounded-md border-2 border-blue-500 overflow-hidden w-96">
         {/* Search input */}
         <div className="flex items-center">
