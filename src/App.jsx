@@ -9,6 +9,7 @@ import { ShoppingCart } from "./pages/ShoppingCart.jsx";
 import SideCartMenu from "./components/cart-side-menu.jsx";
 import Footer from "./components/footer.jsx";
 import SearchBar from "./components/searchbar,.jsx"
+import SuccessPage from "./pages/success.jsx";
 
 const hideMenuOnCartPage = ["/cart"]; // Define routes where the menu is hidden
 
@@ -20,17 +21,17 @@ function App() {
       <Navigation />
       {/* Conditionally render SideCartMenu */}
       {!hideMenuOnCartPage.includes(location.pathname) && <SideCartMenu />}
-      <div className="container p-2 mt-5">
-        <SearchBar />
+      <div className="container p-2 mt-5 flex flex-col">
         <Routes>
           <Route path="/products" element={<ProductsPage />} />
           <Route path="/" element={<Home />} />
           <Route path="/products/:id" element={<ProductPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/cart" element={<ShoppingCart />} />
+          <Route path="/contact/success/" element={<SuccessPage/>} />
         </Routes>
       </div>
-      <Footer />
+      <Footer className="flex-end"/>
     </>
   );
 }

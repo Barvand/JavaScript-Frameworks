@@ -1,6 +1,10 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export function ContactPageForm() {
+  const navigate = useNavigate();
+  const [showMessage, setShowMessage] = useState(false);
+
   const [values, setValues] = useState({
     name: "",
     lastName: "",
@@ -107,15 +111,21 @@ export function ContactPageForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // On submit, you can perform final validation or submission
-    console.log("Form submitted", values);
+
+    const allValid = Object.values(validFields).every((isValid) => isValid);
+    if (allValid) {
+      setShowMessage(true); // Show success message
+      // Add a delay of 2 seconds (2000ms) before navigating
+      setTimeout(() => {
+        navigate("/contact/success/");
+      }, 2000);
+    } else {
+      console.log("Form has errors");
+    }
   };
 
   return (
-    <form
-      className="p-6 text-black"
-      onSubmit={handleSubmit}
-    >
+    <form className="p-6 text-black" onSubmit={handleSubmit}>
       <h2 className="text-3xl text-black my-3 text-center"> Write to us </h2>
       {inputs.map((input) => (
         <div key={input.id} className="flex flex-wrap -mx-3 mb-6">
@@ -165,12 +175,14 @@ export function ContactPageForm() {
                 {errors[input.name]}
               </p>
             )}
-            {validFields[input.name] && !errors[input.name] && (
-              <p className="text-green-500 text-xs italic">Looks good!</p>
-            )}
           </div>
         </div>
       ))}
+      {showMessage && (
+        <div className="p-4 mb-4 text-sm text-green-800 rounded bg-green-50 dark:bg-gray-800 dark:text-green-400">
+          Form submitted. Please wait...
+        </div>
+      )}
       <button
         type="submit"
         className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
