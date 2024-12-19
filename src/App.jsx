@@ -1,6 +1,6 @@
 import { useLocation } from "react-router-dom";
 import { Navigation } from "./components/Nav.jsx";
-import { ProductsPage } from "./pages/Products.jsx";
+import { ProductsPage } from "./pages/Product.jsx";
 import { ContactPage } from "./pages/Contact.jsx";
 import { Home } from "./pages/Home.jsx";
 import { Route, Routes } from "react-router-dom";
@@ -9,6 +9,7 @@ import { ShoppingCart } from "./pages/ShoppingCart.jsx";
 import SideCartMenu from "./components/CartSideMenu.jsx";
 import Footer from "./components/Footer.jsx";
 import SuccessPage from "./pages/Success.jsx";
+import CompletedOrder from "./pages/Completed.jsx";
 
 const hideMenuOnCartPage = ["/cart"]; // Define routes where the menu is hidden
 
@@ -28,6 +29,7 @@ function App() {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/cart" element={<ShoppingCart />} />
           <Route path="/contact/success/" element={<SuccessPage />} />
+          <Route path="/cart/complete/" element={<CompletedOrder/> } />
           
         </Routes>
       </div>

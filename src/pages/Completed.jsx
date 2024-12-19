@@ -8,7 +8,8 @@ export default function CompletedOrder() {
       <h1 className="text-green-500 text-4xl">Form submitted successfully</h1>
       <p>
         {" "}
-        We have received your order, you will receive an order confirmation shortly. 
+        We have received your order, you will receive an order confirmation
+        shortly.
       </p>
       <Link className="text-slate-300 underline" to="/">
         {" "}

@@ -1,5 +1,6 @@
 import DeleteIcon from "../svg/deleteIcon";
 import { Link } from "react-router-dom";
+import { useCartStore } from "../store/cart";
 
 export default function Cart({
   carts,
@@ -10,6 +11,8 @@ export default function Cart({
   increaseQuantity,
 }) {
   const totalCost = (getTotalCost() || 0).toFixed(2);
+
+  const toggleSideCart = useCartStore((state) => state.toggleSideCart);
 
   return (
     <div className="flex flex-col gap-5">
@@ -68,9 +71,11 @@ export default function Cart({
           <div className="mt-auto flex flex-col items-end">
             <p className="text-sm">
               You have
-               <span className="text-white"> {carts.reduce((total, item) => total + item.quantity, 0)} </span> Item(s)
-               in your cart
-      
+              <span className="text-white">
+                {" "}
+                {carts.reduce((total, item) => total + item.quantity, 0)}{" "}
+              </span>{" "}
+              Item(s) in your cart
             </p>
             <button
               onClick={clearCart}
@@ -87,9 +92,17 @@ export default function Cart({
               Sub total: <span className="text-green-500">$ </span>
               {totalCost}
             </p>
-            <button className=" bg-green-500 hover:bg-green-700 hover:text-white text-black px-5 py-2 font-bold lg:w-96">
-              Checkout
-            </button>
+            <Link to="/cart/complete/">
+              <button
+                className=" bg-green-500 hover:bg-green-700 hover:text-white text-black px-5 py-2 font-bold lg:w-96"
+                onClick={() => {
+                  clearCart();
+                  toggleSideCart(false);
+                }}
+              >
+                Checkout
+              </button>
+            </Link>
           </div>
         </div>
       )}

@@ -32,7 +32,6 @@ export function ProductCards() {
     fetchProducts();
   }, []); // Empty dependency array ensures it runs once
 
-
   if (loading) {
     return <div>Loading...</div>;
   }
