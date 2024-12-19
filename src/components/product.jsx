@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useCartStore } from "../store/cart";
 
-export function Product() {
+export default function Product() {
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(null);
   const [isError, setIsError] = useState(null);

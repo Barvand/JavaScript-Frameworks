@@ -1,6 +1,6 @@
-import { Product } from "../components/product";
+import  Product  from "../components/product";
 
-export function ProductPage() {
+export default function ProductPage() {
   return (
     <>
       <Product />

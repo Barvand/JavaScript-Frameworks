@@ -1,7 +1,7 @@
 import { useCartStore } from "../store/cart";
 import Cart from "../components/cart";
 
-export function ShoppingCart() {
+export default function ShoppingCart() {
   const {
     carts,
     removeFromCart,

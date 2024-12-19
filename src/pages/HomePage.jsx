@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import { ProductCards } from "../components/productcards.jsx";
+import ProductCards  from "../components/ProductCards.jsx";
 import Hero from "../components/hero.tsx";
 
-export function Home() {
+export default function Home() {
   // const [showContent, setShowContent] = useState(false);
 
   // // // Trigger the transition to the main content after a delay

@@ -3,7 +3,7 @@ import ViewProductBtn from "./viewproductbtn";
 import { useCartStore } from "../store/cart";
 import { Link } from "react-router-dom";
 
-export function ProductCards() {
+export default function ProductCards() {
   const [products, setProducts] = useState([]); // State to hold products
   const [originalProducts, setOriginalProducts] = useState([]); // State to hold the original (unsorted) products
   const [loading, setLoading] = useState(true); // State to handle loading

@@ -1,6 +1,6 @@
-import { ProductCards } from "../components/productcards.jsx";
+import  ProductCards  from "../components/ProductCards.jsx";
 
-export function ProductsPage() {
+export default function ProductsPage() {
   return (
     <>
       <ProductCards />

@@ -1,8 +1,8 @@
 import { ContactPageForm } from "../components/contactform";
-import ContactCards from "../components/contactcards";
+import  ContactCards   from "../components/contactcards";
 import { ContactDetails } from "../components/contactdetails";
 
-export function ContactPage() {
+export default function ContactPage() {
   return (
     <div className="grid grid-cols-12 gap-4 py-2">
       <ContactCards />
