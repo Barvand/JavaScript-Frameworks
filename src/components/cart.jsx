@@ -70,9 +70,8 @@ export default function Cart({
           ))}
           <div className="mt-auto flex flex-col items-end">
             <p className="text-sm">
-              You have
+              You have{" "}
               <span className="text-white">
-                {" "}
                 {carts.reduce((total, item) => total + item.quantity, 0)}{" "}
               </span>{" "}
               Item(s) in your cart

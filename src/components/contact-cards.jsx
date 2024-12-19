@@ -15,12 +15,13 @@ export default function ContactCards() {
               Contact Timeless
             </h1>
             <p className="text-white">
-              At Timeless, we’re here to help! Whether you have questions about
-              our products, need assistance with your order, or want to provide
-              feedback, our team is ready to assist you.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, reprehenderit in voluptate.
             </p>
             <p className="text-white mt-4">
-              You can reach us through any of the following methods:
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt
             </p>
           </div>
         </div>
@@ -37,12 +38,13 @@ export default function ContactCards() {
               Contact Timeless
             </h1>
             <p className="text-white">
-              At Timeless, we’re here to help! Whether you have questions about
-              our products, need assistance with your order, or want to provide
-              feedback, our team is ready to assist you.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, reprehenderit in voluptate.
             </p>
             <p className="text-white mt-4">
-              You can reach us through any of the following methods:
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt
             </p>
           </div>
         </div>
