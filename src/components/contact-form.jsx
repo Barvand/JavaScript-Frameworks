@@ -113,15 +113,15 @@ export function ContactPageForm() {
 
   return (
     <form
-      className="col-span-12  w-full lg:w-1/2 md:mx-auto bg-black rounded p-6"
+      className="p-6 text-black"
       onSubmit={handleSubmit}
     >
-      <h2 className="text-3xl"> Write to us </h2>
+      <h2 className="text-3xl text-black my-3 text-center"> Write to us </h2>
       {inputs.map((input) => (
         <div key={input.id} className="flex flex-wrap -mx-3 mb-6">
           <div className="w-full px-3">
             <label
-              className="block text-neutral text-sm font-bold mb-2"
+              className="block text-sm font-bold mb-2"
               htmlFor={input.name}
             >
               {input.label}

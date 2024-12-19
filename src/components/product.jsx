@@ -122,7 +122,7 @@ export function Reviews({ reviews }) {
     <h2>Reviews</h2>
     <div className="flex gap-2 flex-wrap sm:items-center">
       {reviews.map((review, index) => (
-        <div key={index} className="col-span-3 p-2 w-96 border ">
+        <div key={index} className="col-span-3 p-2 w-96 border">
           <p className="text-xl text-white">{review.username}</p>
           <p>
             <span className="stars">
