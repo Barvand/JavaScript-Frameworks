@@ -34,14 +34,13 @@ export default function Cart({
               </div>
 
               {/* Price Section */}
-              
-                <div className="col-span-12 sm:col-span-6 flex flex-col justify-center sm:justify-center mt-3 sm:mt-0">
-                  <Link to={`/products/${cart.id}`}>
+
+              <div className="col-span-12 sm:col-span-6 flex flex-col justify-center sm:justify-center mt-3 sm:mt-0">
+                <Link to={`/products/${cart.id}`}>
                   <p className="font-bold">{cart.title}</p>
                   <p>${(cart.quantity * cart.price).toFixed(2)}</p>
-                  </Link>
-                </div>
-            
+                </Link>
+              </div>
 
               {/* Quantity and Delete Section */}
               <div className="col-span-12 sm:col-span-3 flex items-center justify-center sm:justify-center mt-3 sm:mt-0">
@@ -67,6 +66,12 @@ export default function Cart({
             </div>
           ))}
           <div className="mt-auto flex flex-col items-end">
+            <p className="text-sm">
+              You have
+               <span className="text-white"> {carts.reduce((total, item) => total + item.quantity, 0)} </span> Item(s)
+               in your cart
+      
+            </p>
             <button
               onClick={clearCart}
               className={`mt-5 px-5 py-2 bg-red-500 rounded hover:bg-red-700 hover:text-white text-black ${
@@ -82,7 +87,7 @@ export default function Cart({
               Sub total: <span className="text-green-500">$ </span>
               {totalCost}
             </p>
-            <button className=" bg-green-500 hover:bg-green-700 hover:text-white text-black px-5 py-2 font-bold">
+            <button className=" bg-green-500 hover:bg-green-700 hover:text-white text-black px-5 py-2 font-bold lg:w-96">
               Checkout
             </button>
           </div>

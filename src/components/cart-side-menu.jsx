@@ -5,7 +5,6 @@ import { AiOutlineClose } from "react-icons/ai";
 import DeleteIcon from "../svg/deleteIcon";
 
 export default function SideCartMenu() {
-  
   const {
     carts,
     showSideCart,
@@ -111,10 +110,9 @@ export default function SideCartMenu() {
               </div>
               <div className="">
                 <p className="text-sm">
-                  {" "}
-                  You have{" "}
+                  You have
                   {carts.reduce((total, item) => total + item.quantity, 0)}{" "}
-                  Item(s) in your cart{" "}
+                  Item(s) in your cart
                 </p>
               </div>
               <div className="flex flex-col mt-5 items-center ">
