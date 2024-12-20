@@ -118,6 +118,7 @@ export function ContactPageForm() {
       setTimeout(() => {
         navigate("/contact/success/");
       }, 2000);
+      console.log(values);
     } else {
       console.log("Something went wrong");
     }
@@ -143,7 +144,7 @@ export function ContactPageForm() {
                 value={values[input.name]}
                 required={input.required}
                 onChange={handleChange}
-                onBlur={handleBlur} // Trigger validation when user leaves the field
+                onBlur={handleBlur} 
                 className={`appearance-none block w-full bg-gray-200 text-gray-700 border ${
                   errors[input.name]
                     ? "border-red-500"
@@ -161,7 +162,7 @@ export function ContactPageForm() {
                 value={values[input.name]}
                 required={input.required}
                 onChange={handleChange}
-                onBlur={handleBlur} // Trigger validation when user leaves the field
+                onBlur={handleBlur} 
                 className={`appearance-none block w-full bg-gray-200 text-gray-700 border ${
                   errors[input.name]
                     ? "border-red-500"
