@@ -12,8 +12,8 @@ export default {
         neutral: "#C0C0C0", // Silver Chrome
         pink: "#FF007F", // Laser pink
         lime: "#AFFF33", // Lime green
-        danger: "#EF4444", 
-        price: "#39FF14",
+        danger: "#EF4444",
+        gold: "#ffff00",
       },
     },
     container: {
@@ -21,7 +21,7 @@ export default {
     },
     fontFamily: {
       koulen: ["Koulen", "sans-serif"],
-      roboto: ["Roboto", "sans-serif"], 
+      roboto: ["Roboto", "sans-serif"],
     },
   },
   plugins: [],

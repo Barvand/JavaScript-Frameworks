@@ -59,7 +59,7 @@ return (
 
         {/* Only display search results if there is a search term */}
         {search && (
-          <div className="absolute bg-black top-full righ-0 border-2 border-blue-500 rounded-md mt-1 z-10">
+          <div className="absolute bg-primary top-full righ-0 border-2 border-blue-500 rounded-md mt-1 z-10">
             {filteredProducts.length > 0 ? (
               filteredProducts.map((product) => (
                 <div key={product.id} className="w-full px-4 py-2 hover:bg-gray-800">

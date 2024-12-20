@@ -39,7 +39,7 @@ export function Product() {
   }
 
   return (
-    <div className="md:container-md grid grid-cols-12 grid-rows-2 gap-4 mt-5">
+    <div className="md:container grid grid-cols-12 gap-4 mt-5">
       {/* Image Section */}
       <div
         key={data.id}
@@ -96,7 +96,7 @@ export function Product() {
         </div>
         <div className="flex gap-2 mt-4">
           <button
-            className="font-bold py-2 px-4 rounded gradient-border-bottom"
+            className="font-bold py-2 px-4 rounded gradient-border-bottom bg-blue-500 text-black"
             onClick={() => addToCart(data)}
           >
             Add to cart
@@ -119,21 +119,24 @@ export function Reviews({ reviews }) {
 
   return (
     <>
-    <h2 className="text-3xl py-3 mt-5">What do our customers say?</h2>
-    <div className="flex gap-2 flex-wrap sm:items-center">
-      {reviews.map((review, index) => (
-        <div key={index} className="col-span-3 p-2 w-96 border rounded border-slate-800">
-          <p className="text-xl">{review.username}</p>
-          <p>
-            <span className="stars">
-              {"★".repeat(review.rating)}
-              {"☆".repeat(5 - review.rating)}
-            </span>
-          </p>
-          <p>{review.description}</p>
-        </div>
-      ))}
-    </div>
+      <h2 className="text-3xl py-3 mt-5 p-4 ">What do our customers say?</h2>
+      <div className="flex gap-2 flex-wrap sm:items-center p-4">
+        {reviews.map((review, index) => (
+          <div
+            key={index}
+            className="col-span-3 p-2 w-96 border rounded border-slate-800"
+          >
+            <p className="text-xl">{review.username}</p>
+            <p>
+              <span className="stars">
+                {"★".repeat(review.rating)}
+                {"☆".repeat(5 - review.rating)}
+              </span>
+            </p>
+            <p>{review.description}</p>
+          </div>
+        ))}
+      </div>
     </>
   );
 }

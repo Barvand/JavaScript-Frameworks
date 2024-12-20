@@ -64,7 +64,9 @@ export default function SideCartMenu() {
                   <div className="col-span-12 sm:col-span-6 flex flex-col justify-center sm:justify-center mt-3 p-2 sm:mt-0">
                     <Link to={`/products/${cart.id}`}>
                       <p className="font-bold text-white">{cart.title}</p>
-                      <p className="text-green-500 text-bold">${(cart.quantity * cart.price).toFixed(2)}</p>
+                      <p className="text-green-500 text-bold">
+                        ${(cart.quantity * cart.price).toFixed(2)}
+                      </p>
                     </Link>
                   </div>
 
