@@ -41,7 +41,7 @@ export default function SideCartMenu() {
         }`}
       >
         <div className="flex flex-col gap-5">
-          <h1 className="text-xl text-center">Shopping Cart</h1>
+          <h1 className="text-xl text-center py-4">Shopping Cart</h1>
           {carts.length === 0 ? (
             <p className="text-lg text-center mt-20">Your cart is empty</p>
           ) : (
@@ -49,7 +49,7 @@ export default function SideCartMenu() {
               {carts.map((cart) => (
                 <div
                   key={cart.id}
-                  className="my-5 gradient-border-side-menu grid grid-cols-1 sm:grid-cols-12 p-3 items-center justify-items-center sm:justify-items-start"
+                  className="my-5 grid grid-cols-1 sm:grid-cols-12 p-2 items-center justify-items-center sm:justify-items-start border border-slate-800"
                 >
                   {/* Image and Title Section */}
                   <div className="col-span-2 flex items-center gap-2 justify-center sm:justify-start">
@@ -63,8 +63,8 @@ export default function SideCartMenu() {
                   {/* Price Section */}
                   <div className="col-span-12 sm:col-span-6 flex flex-col justify-center sm:justify-center mt-3 p-2 sm:mt-0">
                     <Link to={`/products/${cart.id}`}>
-                      <p className="font-bold">{cart.title}</p>
-                      <p>${(cart.quantity * cart.price).toFixed(2)}</p>
+                      <p className="font-bold text-white">{cart.title}</p>
+                      <p className="text-green-500 text-bold">${(cart.quantity * cart.price).toFixed(2)}</p>
                     </Link>
                   </div>
 
@@ -111,7 +111,9 @@ export default function SideCartMenu() {
               <div className="">
                 <p className="text-sm">
                   You have{" "}
-                   <span className="text-white">{carts.reduce((total, item) => total + item.quantity, 0)} </span> {" "}
+                  <span className="text-white">
+                    {carts.reduce((total, item) => total + item.quantity, 0)}{" "}
+                  </span>{" "}
                   Item(s) in your cart
                 </p>
               </div>
@@ -133,7 +135,7 @@ export default function SideCartMenu() {
           onClick={() => toggleSideCart(false)} // Close the side cart
           className="absolute top-0 right-0 p-2 text-white"
         >
-          <AiOutlineClose className="text-4xl" />
+          <AiOutlineClose className="text-4xl  my-4" />
         </button>
       </div>
     </>

@@ -24,7 +24,7 @@ export default function Cart({
           {carts.map((cart) => (
             <div
               key={cart.id}
-              className="my-5 gradient-border-side-menu grid grid-cols-1 sm:grid-cols-12 p-3 items-center justify-items-center sm:justify-items-start"
+              className="my-5 border border-slate-700 grid grid-cols-1 sm:grid-cols-12 p-2 rounded items-center justify-items-center sm:justify-items-start"
             >
               {/* Image and Title Section */}
 
@@ -40,8 +40,8 @@ export default function Cart({
 
               <div className="col-span-12 sm:col-span-6 flex flex-col justify-center sm:justify-center mt-3 sm:mt-0">
                 <Link to={`/products/${cart.id}`}>
-                  <p className="font-bold">{cart.title}</p>
-                  <p>${(cart.quantity * cart.price).toFixed(2)}</p>
+                  <p className="font-bold text-white">{cart.title}</p>
+                  <p className="text-green-500 font-bold">${(cart.quantity * cart.price).toFixed(2)}</p>
                 </Link>
               </div>
 
@@ -87,13 +87,13 @@ export default function Cart({
             </button>
           </div>
           <div className="flex flex-col mt-5">
-            <p className="font-bold">
+            <p className="font-bold text-white text-xl">
               Sub total: <span className="text-green-500">$ </span>
               {totalCost}
             </p>
             <Link to="/cart/complete/">
               <button
-                className=" bg-green-500 hover:bg-green-700 hover:text-white text-black px-5 py-2 font-bold lg:w-96"
+                className=" bg-green-500 hover:bg-green-700 hover:text-white text-black px-5 py-2 font-bold lg:w-96 mt-5"
                 onClick={() => {
                   clearCart();
                   toggleSideCart(false);

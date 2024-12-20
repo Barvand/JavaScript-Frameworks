@@ -119,11 +119,11 @@ export function Reviews({ reviews }) {
 
   return (
     <>
-    <h2>Reviews</h2>
+    <h2 className="text-3xl py-3 mt-5">What do our customers say?</h2>
     <div className="flex gap-2 flex-wrap sm:items-center">
       {reviews.map((review, index) => (
-        <div key={index} className="col-span-3 p-2 w-96 border">
-          <p className="text-xl text-white">{review.username}</p>
+        <div key={index} className="col-span-3 p-2 w-96 border rounded border-slate-800">
+          <p className="text-xl">{review.username}</p>
           <p>
             <span className="stars">
               {"★".repeat(review.rating)}
