@@ -115,11 +115,3 @@ This project is a fully functional e-commerce store built with React. It interac
    yarn start
    ```
 2. Open the application in your browser at `http://localhost:3000`.
-
-## Validation Rules
-
-- **Full Name**: Minimum 3 characters, required.
-- **Subject**: Minimum 3 characters, required.
-- **Email**: Valid email format, required.
-- **Body**: Minimum 3 characters, required.
-
