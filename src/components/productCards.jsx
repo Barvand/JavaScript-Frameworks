@@ -33,9 +33,13 @@ export function ProductCards() {
   }, []); // Empty dependency array ensures it runs once
 
 
-  if (loading) {
-    return <div>Loading...</div>;
-  }
+ if (loading) {
+   return (
+     <div className="flex justify-center">
+       <div className="loader"></div>;
+     </div>
+   );
+ }
 
   if (error) {
     return <div>Oops, something went wrong: {error}</div>;

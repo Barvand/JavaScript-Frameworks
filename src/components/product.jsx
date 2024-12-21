@@ -31,7 +31,11 @@ export function Product() {
   }, [id]);
 
   if (isLoading || !data) {
-    return <div>Loading</div>;
+    return (
+      <div className="flex justify-center">
+        <div className="loader"></div>;
+      </div>
+    );
   }
 
   if (isError) {

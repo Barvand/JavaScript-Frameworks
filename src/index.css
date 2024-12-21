@@ -21,10 +21,10 @@ h6 {
   color: #fff;
 }
 
-#root { 
+#root {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; 
+  min-height: 100vh;
 }
 
 html,
@@ -32,7 +32,6 @@ body {
   height: 100%; /* Ensure the height of the HTML and body elements is 100% */
   margin: 0;
 }
-
 
 body {
   background-color: #0a122a;
@@ -206,9 +205,8 @@ nav {
   background-image: linear-gradient(135deg, #afff33, #00ffff);
 }
 
-
 footer {
-  background-color: #0a122a; 
+  background-color: #0a122a;
   text-align: center;
   padding: 10px 0;
 }
@@ -226,6 +224,26 @@ input:invalid[focused="true"] {
 input:invalid[focused="true"] ~ .error-message {
   display: block;
 }
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #fff;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+  @keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+    } 
 
 @keyframes fadeInUp {
   from {
@@ -259,14 +277,4 @@ input:invalid[focused="true"] ~ .error-message {
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-#skeleton {
-  animation: fadeInUp 3s ease;
-}
-
-#animation g {
-  opacity: 0;
-  animation: dropIn 4s ease forwards infinite;
-  animation-delay: calc(var(--order) * 200ms);
 }

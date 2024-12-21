@@ -1,5 +1,4 @@
 import React from "react";
-import MobileAnimation from "../svg/mobile-animation";
 
 interface Hero {}
 

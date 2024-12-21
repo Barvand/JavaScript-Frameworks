@@ -1,7 +1,5 @@
 import {
-  AiFillThunderbolt,
   AiFillContacts,
-  AiOutlineMail,
   AiFillAccountBook,
   AiFillAlert,
 } from "react-icons/ai";
